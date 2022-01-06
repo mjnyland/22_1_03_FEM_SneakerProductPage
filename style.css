@@ -1,3 +1,55 @@
-.displayed-image{
+html, body{
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+nav{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 30px;
+}
+
+.nav-hamburger{
+    width: 18px;
+    height: 50%;;
+}
+
+.nav-hamburger div{
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+.nav-logo{
+    margin-left: 20px;
+}
+
+.nav-cart{
+    margin-left: auto;
+}
+
+.nav-user-img{
+    height: 30px;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sneaker-image{
     width: 100%;
 }
