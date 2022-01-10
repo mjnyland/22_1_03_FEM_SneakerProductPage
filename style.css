@@ -24,6 +24,12 @@ html, body{
     position: relative;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /*-----------------------------------------------------------------------------------Nav----*/
 
 nav{
@@ -32,6 +38,7 @@ nav{
     align-items: center;
     justify-content: flex-start;
     padding: 10px 30px;
+    margin: 0 10px;
 }
 
 .nav-hamburger{
@@ -48,6 +55,34 @@ nav{
 
 .nav-logo{
     margin-left: 10px;
+}
+
+.nav-link{
+    position: relative;
+    display: none;
+    color: var(--grayishblue);
+    cursor: pointer;
+    margin: 0 .7em 0 .7em;
+    font-size: 13px;
+}
+
+.nav-link-highlight{
+    padding: 0 5px 0 5px;
+    position: absolute;
+    top: 52px;
+    margin: 0;
+    display: none;
+    height: 4px;
+    background-color: var(--orange);
+    width: 100%;
+}
+
+.nav-link:hover{
+    color: var(--darkgrayishblue);
+}
+
+.nav-link:hover > .nav-link-highlight{
+    display: block;
 }
 
 .nav-cart-icon-container{
@@ -82,6 +117,13 @@ nav{
     margin-left: 20px;
 }
 
+.nav-user-img:hover{
+    border: 2px solid var(--orange);
+    border-radius: 50%;
+    margin-left: 18px;
+    margin-right: -2px;
+}
+
 
 /*-----------------------------------------------------------------------------------Containers----*/
 
@@ -96,6 +138,7 @@ nav{
     height: 350px;
     overflow: hidden;
     background-color: aqua;
+    user-select: none;
 }
 
 .sneaker-image{
@@ -131,6 +174,10 @@ nav{
 .next-arrow,
 .prev-arrow{
     pointer-events: none;
+}
+
+.prev-arrow{
+    padding-right: 4px;
 }
 
 .sneaker-text-container{
@@ -185,9 +232,6 @@ nav{
     flex-direction: column;
     position: absolute;
     padding: 1.2em 1.3em 2em 1.3em;
-    top: 210px;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: max-content;
     width: 85%;
     background-color: white;
@@ -228,6 +272,15 @@ nav{
 
 .cart-delete-icon{
     margin-left: auto;
+}
+
+.cart-price-and-total,
+.cart-total-price{
+    display: inline;
+}
+
+.cart-total-price{
+    font-weight: 700;
 }
 
 .checkout-container{
@@ -283,4 +336,92 @@ nav{
 
 
 
+/*-----------------------------------------------------------------------------------Media Queries----*/
+
+@media (min-width: 800px) {
+
+    nav{
+        border-bottom: 1px solid var(--lightgrayishblue);
+        padding: 10px 0;
+        margin: 0 4em 0 4em;
+    }
+
+    .nav-hamburger{
+        display: none;
+    }
+
+    .nav-logo{
+        margin: 0 2em 0 0;
+    }
+
+    .nav-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-cart-icon-container{
+        margin-right: 30px;
+    }
+
+    .sneaker-container{
+        flex-direction: row;
+        padding: 4em 6em 4em 6em;
+    }
+
+    .sneaker-image{
+        border-radius: 5px;
+    }
+
+    .next-arrow-container,
+    .prev-arrow-container{
+        display: none;
+    }
+
+    .thumbnail-container{
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
+        z-index: 300;
+    }
+
+    .sneaker-thumbnail{
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .sneaker-text-container{
+        width: 50%;
+        margin-left: 3em;
+    }
+
+    .sneaker-button-container{
+        display: flex;
+        width: 100%;
+    }
+
+    .quantity-container{
+        min-width: 140px;
+        width: 40%;
+        margin: 0;
+    }
+
+    .quantity-number-container h3{
+        margin: 0 auto;
+    }
+
+    .addtocart-container{
+        width: 60%;
+        margin: 0 0 0 10px;
+    }
+
+    .cart-container{
+        width: 300px;
+        margin-left: auto;
+        position: absolute;
+        right: 100px;
+    }
+
+}
 
